@@ -1,0 +1,46 @@
+Bug Hitlist X(
+
+-what the issue you fixed was, where it was, and if it has a proper name identified by a static analyzer what that name was
+
+First Victim:
+Where: Course Class
+Issue Fixed: enrollStudent() did not properly check if the course was full & always returned false, or if the enrollment was successful
+
+Victim 2:
+Where: Course Class
+Issue Fixed: dropStudent() now properly checks if a student is in the course and if the drop was successful
+
+Victim 3:
+Where: Course Class
+Issue Fixed: isCourseFull() had the wrong logic, I made it so that if the students are >= to the limit, the course is marked as full (it returns true)
+
+Victim 4:
+Where: Course Class, Line 22
+Issue Fixed: made it so that enrolledStudentCount actually starts at zero rather than 500
+
+Victim 5:
+Where: Course Class, getInstructorName
+Issue Fixed: it would get the class location, changed to return the instructor's name
+
+Victim 6:
+Where: Course Class, getCourseLocation
+Issue Fixed: it would get the instructor name, changed to return the course location
+
+Victim 7:
+Where:
+Issue Fixed:
+
+Victim 8:
+Where:
+Issue Fixed:
+
+Victim 9:
+Where:
+Issue Fixed:
+
+
+
+Victim X:
+Where:
+Issue Fixed:
+
