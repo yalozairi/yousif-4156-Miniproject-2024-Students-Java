@@ -42,14 +42,12 @@ public class Course implements Serializable {
    * @return true if the student is successfully dropped, false otherwise.
    */
   public boolean dropStudent() {
-    int enrolledStudentsBeforeDrop = enrolledStudentCount;
-    if (enrolledStudentCount>0){
+    //int enrolledStudentsBeforeDrop = enrolledStudentCount;
+    if (enrolledStudentCount > 0) {
       enrolledStudentCount--;
-      if (enrolledStudentsBeforeDrop==(enrolledStudentCount+1)) {
+      //if (enrolledStudentsBeforeDrop==(enrolledStudentCount+1)) {
       return true;
-      } else {
-      return false;
-      }
+      //}
     } else {
       return false;
     }
@@ -70,7 +68,7 @@ public class Course implements Serializable {
     return this.courseTimeSlot;
   }
 
-  /** returns enrolled student count (added by Yousif) */
+  /** returns enrolled student count (added by Yousif). */
   public int getEnrolledStudentCount() {
     return this.enrolledStudentCount;
   }

@@ -27,20 +27,26 @@ Where: Course Class, getCourseLocation
 Issue Fixed: it would get the instructor name, changed to return the course location
 
 Victim 7:
-Where:
-Issue Fixed:
+Where: Department.java toString
+Issue Fixed: return "result.toString()" hilariously returned that exact string, rather than the actual value
 
 Victim 8:
-Where:
-Issue Fixed:
+Where: Route Controller, handleException
+Issue Fixed: The return value returned http status OK. this was changed to the 404 error NOT_FOUND
 
 Victim 9:
 Where:
 Issue Fixed:
 
+Victim 10:
+Where: RouteController, getMajorCtFromDept
+Issue Fixed: The status FORBIDDEN was returned in the case where the department was not found. Changed this to NOT_FOUND
 
+PMD BUGS:
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 https://pmd.github.io/schema/report_2_0_0.xsd" version="7.3.0" timestamp="2024-09-13T23:40:48.961">
+</pmd>
 
-Victim X:
-Where:
-Issue Fixed:
+Two unused variables
+In RouteController, I had to change the time from "some time" to requestedcourse.getCourseTime()
 
