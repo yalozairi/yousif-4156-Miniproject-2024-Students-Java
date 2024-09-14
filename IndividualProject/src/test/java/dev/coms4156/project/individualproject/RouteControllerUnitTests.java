@@ -1,5 +1,8 @@
 package dev.coms4156.project.individualproject;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.HashMap;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,12 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.util.RouteMatcher;
 
-import java.util.HashMap;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.yaml.snakeyaml.nodes.NodeId.mapping;
+
 
 /** * Class contains testing for the RouteController class of this project. */
 @SpringBootTest
@@ -27,6 +27,7 @@ public class RouteControllerUnitTests {
     routeControllerTest = new RouteController();
   }
 
+  /** *This is the database data. */
   public void resetDataFile() {
     String[] times = {"11:40-12:55", "4:10-5:25", "10:10-11:25", "2:40-3:55"};
     String[] locations = {"417 IAB", "309 HAV", "301 URIS"};
@@ -250,6 +251,7 @@ public class RouteControllerUnitTests {
     myFileDatabaseTest.setMapping(mapping);
   }
 
+  /** this sets up the db. */
   @BeforeEach
   public void setupDatabase() {
 
@@ -277,16 +279,15 @@ public class RouteControllerUnitTests {
 
     testDepartment.addCourse("7", testCourseToBeAdded);*/
   }
-
-/*
+  /*
   @Test
   public void toStringTest() {
     String expectedResult = "\nInstructor: Kaiser; Location: interwebs; Time: tomorrow";
     assertEquals(expectedResult, testCourseASE.toString());
-  }*/
+  } */
 
   @Test
-  public void retrieveDepartmentTest(){
+  public void retrieveDepartmentTest() {
     ResponseEntity<?> response = routeControllerTest.retrieveDepartment("COMS");
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
   }
@@ -299,90 +300,90 @@ public class RouteControllerUnitTests {
   }
 
   @Test
-  public void isCourseFullTest(){
+  public void isCourseFullTest() {
     ResponseEntity<?> response = routeControllerTest.isCourseFull("PSYC", 1001);
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
   }
 
   @Test
-  public void getMajorCtFromDeptTest(){
+  public void getMajorCtFromDeptTest() {
     ResponseEntity<?> response = routeControllerTest.getMajorCtFromDept("PSYC");
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
   }
 
   @Test
-  public void identifyDeptChairTest(){
+  public void identifyDeptChairTest() {
     ResponseEntity<?> response = routeControllerTest.identifyDeptChair("PSYC");
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
   }
 
   @Test
-  public void findCourseLocationTest(){
+  public void findCourseLocationTest() {
     ResponseEntity<?> response = routeControllerTest.findCourseLocation("PSYC", 1001);
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
   }
 
   @Test
-  public void findCourseInstructorTest(){
+  public void findCourseInstructorTest() {
     ResponseEntity<?> response = routeControllerTest.findCourseInstructor("PSYC", 1001);
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
   }
 
   @Test
-  public void findCourseTimeTest(){
+  public void findCourseTimeTest() {
     ResponseEntity<?> response = routeControllerTest.findCourseTime("PSYC", 1001);
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
   }
 
   @Test
-  public void addMajortoDeptTest(){
+  public void addMajortoDeptTest() {
     ResponseEntity<?> response = routeControllerTest.addMajorToDept("PSYC");
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
   }
 
   @Test
-  public void removeMajorFromDeptTest(){
+  public void removeMajorFromDeptTest() {
     ResponseEntity<?> response = routeControllerTest.removeMajorFromDept("PSYC");
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
   }
 
   @Test
-  public void dropStudentTest(){
+  public void dropStudentTest() {
     ResponseEntity<?> response = routeControllerTest.dropStudent("PSYC", 1001);
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
   }
 
   @Test
-  public void setEnrollmentCountTest(){
+  public void setEnrollmentCountTest() {
     ResponseEntity<?> response = routeControllerTest.setEnrollmentCount("PSYC", 1001, 150);
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
 
   }
 
   @Test
-  public void changeCourseTimeTest(){
+  public void changeCourseTimeTest() {
     ResponseEntity<?> response = routeControllerTest.changeCourseTime("PSYC", 1001, "1:10-7");
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     //ResponseEntity<?> catchResponse = routeControllerTest.changeCourseTime("hif",1,"fhie");
   }
 
   @Test
-  public void changeCourseTeacherTest(){
+  public void changeCourseTeacherTest() {
     ResponseEntity<?> response = routeControllerTest.changeCourseTeacher("PSYC", 1001, "new teach");
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
-    ResponseEntity<?> catchResponse = routeControllerTest.changeCourseLocation("hif",1,"fhie");
+    ResponseEntity<?> catchResponse = routeControllerTest.changeCourseLocation("hif", 1, "fhie");
   }
 
   @Test
-  public void changeCourseLocationTest(){
+  public void changeCourseLocationTest() {
     ResponseEntity<?> response = routeControllerTest.changeCourseLocation("PSYC", 1001, "new room");
-    ResponseEntity<?> catchResponse = routeControllerTest.changeCourseLocation("hif",1,"fhie");
+    ResponseEntity<?> catchResponse = routeControllerTest.changeCourseLocation("hif", 1, "fhie");
     assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
 
 
   }
 
-  /** The test course/department instances used for testing.
+  /* The test course/department instances used for testing.
   public static Department testDepartment;
   public static Department testEEDepartment;
   public static Course testCourseToBeAdded;

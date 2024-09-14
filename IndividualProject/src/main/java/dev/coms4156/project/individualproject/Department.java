@@ -107,13 +107,13 @@ public class Department implements Serializable {
       result.append(deptCode).append(" ").append(key).append(": ").append(value.toString())
           .append("\n");
     }
-    return "result.toString()";
+    return result.toString();
   }
 
   @Serial
   private static final long serialVersionUID = 234567L;
   private HashMap<String, Course> courses;
-  private String departmentChair;
+  //private String departmentChair;
   private String deptCode;
   private int numberOfMajors;
 }
