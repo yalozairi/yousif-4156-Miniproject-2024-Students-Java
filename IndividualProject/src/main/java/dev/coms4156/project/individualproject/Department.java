@@ -113,7 +113,7 @@ public class Department implements Serializable {
   @Serial
   private static final long serialVersionUID = 234567L;
   private HashMap<String, Course> courses;
-  //private String departmentChair;
+  // private String departmentChair;
   private String deptCode;
   private int numberOfMajors;
 }

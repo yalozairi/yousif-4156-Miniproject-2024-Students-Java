@@ -289,88 +289,88 @@ public class RouteControllerUnitTests {
   @Test
   public void retrieveDepartmentTest() {
     ResponseEntity<?> response = routeControllerTest.retrieveDepartment("COMS");
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
   }
 
   @Test
   public void retrieveCourseTest() {
     ResponseEntity<?> response = routeControllerTest.retrieveCourse("COMS", 1004);
     System.out.println(response.getBody());
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
   }
 
   @Test
   public void isCourseFullTest() {
     ResponseEntity<?> response = routeControllerTest.isCourseFull("PSYC", 1001);
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
   }
 
   @Test
   public void getMajorCtFromDeptTest() {
     ResponseEntity<?> response = routeControllerTest.getMajorCtFromDept("PSYC");
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
   }
 
   @Test
   public void identifyDeptChairTest() {
     ResponseEntity<?> response = routeControllerTest.identifyDeptChair("PSYC");
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
   }
 
   @Test
   public void findCourseLocationTest() {
     ResponseEntity<?> response = routeControllerTest.findCourseLocation("PSYC", 1001);
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
   }
 
   @Test
   public void findCourseInstructorTest() {
     ResponseEntity<?> response = routeControllerTest.findCourseInstructor("PSYC", 1001);
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
   }
 
   @Test
   public void findCourseTimeTest() {
     ResponseEntity<?> response = routeControllerTest.findCourseTime("PSYC", 1001);
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
   }
 
   @Test
   public void addMajortoDeptTest() {
     ResponseEntity<?> response = routeControllerTest.addMajorToDept("PSYC");
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
   }
 
   @Test
   public void removeMajorFromDeptTest() {
     ResponseEntity<?> response = routeControllerTest.removeMajorFromDept("PSYC");
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
   }
 
   @Test
   public void dropStudentTest() {
     ResponseEntity<?> response = routeControllerTest.dropStudent("PSYC", 1001);
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
   }
 
   @Test
   public void setEnrollmentCountTest() {
     ResponseEntity<?> response = routeControllerTest.setEnrollmentCount("PSYC", 1001, 150);
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
 
   }
 
   @Test
   public void changeCourseTimeTest() {
     ResponseEntity<?> response = routeControllerTest.changeCourseTime("PSYC", 1001, "1:10-7");
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
     //ResponseEntity<?> catchResponse = routeControllerTest.changeCourseTime("hif",1,"fhie");
   }
 
   @Test
   public void changeCourseTeacherTest() {
     ResponseEntity<?> response = routeControllerTest.changeCourseTeacher("PSYC", 1001, "new teach");
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
     ResponseEntity<?> catchResponse = routeControllerTest.changeCourseLocation("hif", 1, "fhie");
   }
 
@@ -378,7 +378,7 @@ public class RouteControllerUnitTests {
   public void changeCourseLocationTest() {
     ResponseEntity<?> response = routeControllerTest.changeCourseLocation("PSYC", 1001, "new room");
     ResponseEntity<?> catchResponse = routeControllerTest.changeCourseLocation("hif", 1, "fhie");
-    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(HttpStatus.OK, response.getStatusCode());
 
 
   }
