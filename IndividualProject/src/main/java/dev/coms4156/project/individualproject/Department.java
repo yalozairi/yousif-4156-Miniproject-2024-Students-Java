@@ -23,7 +23,7 @@ public class Department implements Serializable {
   public Department(String deptCode, HashMap<String, Course> courses, String departmentChair,
                     int numberOfMajors) {
     this.courses = courses;
-    this.departmentChair = departmentChair;
+    // this.departmentChair = departmentChair;
     this.numberOfMajors = numberOfMajors;
     this.deptCode = deptCode;
   }
